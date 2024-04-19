@@ -1,0 +1,56 @@
+.landing-page {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    width: 100vw;
+    padding: 30px;
+    top: 100px;
+}
+
+.landing-page .buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    width: 400px;
+    height: 500px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    flex-direction: column;
+}
+
+.landing-page .button-box {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 40px;
+}
+
+.landing-page .buttons-container a {
+    margin: 20px;
+    width: 200px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing-page img {
+    width: 80px;
+    height: 80px;
+    margin: 20px 20px;
+}
+
+.landing-page .text-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 30px;
+    flex-direction: column;
+}
+
+.landing-page .text-box h1 {
+    font-weight: 900;
+}

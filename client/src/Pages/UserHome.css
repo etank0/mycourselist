@@ -1,0 +1,7 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    margin: 30px 30px;
+    position: relative;
+    top: 100px;
+}
