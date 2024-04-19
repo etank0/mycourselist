@@ -10,11 +10,11 @@
 - **User Management**: Students can easily manage their course selections, adding or removing courses as needed.
 - **Administrative Access**: Administrators can perform comprehensive CRUD operations on the courses database, ensuring that the course listings are current and accurate.
 - **YouTube Integration**: Courses are linked with YouTube videos providing supplementary video content to enhance the learning experience.
-- **Responsive Design**: The system uses HTML and CSS to provide a responsive and visually appealing interface.
+- **Responsive Design**: The system uses React, HTML and CSS(Bootstrap) to provide a responsive and visually appealing interface.
 
 ## Technologies Used
 
-- **Frontend**: HTML, CSS
+- **Frontend**: React, HTML, CSS(Bootstrap)
 - **Backend**: Python (Flask)
 - **Database**: SQLite3
 
@@ -22,27 +22,34 @@
 
 1. **Clone the repository:**
    ```bash
-   git clone [repository-url]
+   git clone https://github.com/etank0/mycourselist
    ```
 
 2. **Navigate to the project directory:**
    ```bash
-   cd MyCourseList
+   cd mycourselist
    ```
 
-3. **Install dependencies:**
+3. **Install dependencies for frontend:**
    ```bash
+   cd client
+   npm install
+   ```
+
+4. **Install dependencies for backend:**
+   ```bash
+   cd server
    pip install -r requirements.txt
    ```
 
-4. **Initialize the database:**
+5. **Run the server application:**
    ```bash
-   flask db upgrade
+   python app.py
    ```
 
-5. **Run the application:**
+6. **Run the client application:**
    ```bash
-   flask run
+   npm start
    ```
 
 ## Usage
