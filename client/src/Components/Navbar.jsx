@@ -1,5 +1,5 @@
 import './Navbar.css';
-import navlogo from '../navlogo.png';
+import navlogo from '../newnavbar.png';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
