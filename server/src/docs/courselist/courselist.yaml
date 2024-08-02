@@ -1,0 +1,94 @@
+Gives a list of courses added by the user
+---
+tags: 
+  - Courselist
+parameters:
+  - in: path
+    name: username
+    required: true
+
+responses:
+  200:
+    description: Courses fetched successfully
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            courses:
+              type: array
+              items:
+                type: object
+                properties:
+                  completed_at:
+                    type: string
+                    format: date-time
+                    description: The date and time when the course was completed
+                  courseid:
+                    type: integer
+                    description: The ID of the course
+                  creator:
+                    type: string
+                    description: The creator of the course
+                  enrolled:
+                    type: integer
+                    description: The number of users enrolled in the course
+                  hours:
+                    type: number
+                    description: The total duration of the course in hours
+                  id:
+                    type: integer
+                    description: The ID of the course entry
+                  is_completed:
+                    type: integer
+                    description: Indicates whether the course is completed
+                  link:
+                    type: string
+                    format: uri
+                    description: The link to the course playlist
+                  modules:
+                    type: integer
+                    description: The total number of modules in the course
+                  modules_completed:
+                    type: integer
+                    description: The number of modules completed in the course
+                  name:
+                    type: string
+                    description: The name of the course
+                  published_at:
+                    type: string
+                    format: date-time
+                    description: The date and time when the course was published
+                  rating:
+                    type: integer
+                    description: The rating of the course
+                  thumbnail:
+                    type: string
+                    format: uri
+                    description: The URL of the course thumbnail image
+                  userid:
+                    type: integer
+                    description: The ID of the user who created the course
+            message:
+              type: string
+              description: A message indicating the status of the request
+            status:
+              type: string
+              description: The status of the request
+
+  404:
+    description: User with the specified username was not found
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            message:
+              type: string
+              description: A message indicating the status of the request
+            status:
+              type: string
+              description: The status of the request
+  
+  500:
+    description: Something went wrong internally

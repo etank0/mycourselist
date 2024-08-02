@@ -1,0 +1,44 @@
+Admin adds the course in db
+---
+tags: 
+  - Admin
+security:
+  - Bearer: []
+parameters:
+  - name: body
+    description: The body should have a Youtube playlist/video link, description of course and tags
+    in: body
+    required: true
+    schema:
+      type: object
+      required:
+        - "link"
+        - "description"
+        - "tags"
+        - "newtags"
+      properties:
+        link:
+          type: "string"
+          example: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        description:
+          type: "string"
+          example: "Javscript course!"
+        tags:
+          type: "array"
+          example: ["programming", "web development"]
+        newtags:
+          type: "array"
+          example: ["programming", "web development"]
+
+responses:
+  200:
+    description: Course added successfully with details
+    
+  400:
+    description: Bad Request
+  
+  401:
+    description: Missing authorization header
+  
+  500:
+    description: Something went wrong internally

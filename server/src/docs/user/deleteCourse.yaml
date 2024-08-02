@@ -1,0 +1,22 @@
+User deletes one of the enrolled courses
+---
+tags: 
+  - User
+parameters:
+  - in: path
+    name: courseid
+    required: true
+security:
+  - Bearer: []
+responses:
+  200:
+    description: Course deleted successfully
+    
+  400:
+    description: Bad Request
+  
+  401:
+    description: Missing authorization header
+  
+  500:
+    description: Something went wrong internally

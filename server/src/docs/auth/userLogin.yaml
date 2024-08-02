@@ -1,0 +1,71 @@
+Logs in the user
+---
+tags: 
+  - Authentication
+parameters:
+  - name: body
+    description: The body should contain the user login credentials
+    in: body
+    required: true
+    schema:
+      type: object
+      required:
+        - "username"
+        - "password"
+      properties:
+        username:
+          type: "string"
+          example: "user456"
+        password:
+          type: "string"
+          format: password
+          example: "********"
+
+responses:
+  200:
+    description: User logged in successfully
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            message:
+              type: string
+              description: A message indicating the status of the request
+            status:
+              type: string
+              description: The status of the request
+            user:
+              type: object
+              properties:
+                access_token:
+                  type: string
+                  description: The access token for the user session
+                email:
+                  type: string
+                  description: The email address of the user
+                id:
+                  type: integer
+                  description: The ID of the user
+                name:
+                  type: string
+                  description: The name of the user
+                refresh_token:
+                  type: string
+                  description: The refresh token for the user session
+                url:
+                  type: string
+                  format: uri
+                  description: The URL of the user's profile picture
+                username:
+                  type: string
+                  description: The username of the user
+                visits:
+                  type: integer
+                  description: The number of visits or logins by the user
+    
+  400:
+    description: Bad Request
+  
+  500:
+    description: Something went wrong internally

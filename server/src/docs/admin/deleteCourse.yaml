@@ -1,0 +1,22 @@
+Admin deletes the courses in db
+---
+tags: 
+  - Admin
+parameters:
+  - in: path
+    name: id
+    required: true
+security:
+  - Bearer: []
+responses:
+  200:
+    description: Course deleted successfully
+    
+  400:
+    description: Bad Request
+  
+  401:
+    description: Missing authorization header
+  
+  500:
+    description: Something went wrong internally

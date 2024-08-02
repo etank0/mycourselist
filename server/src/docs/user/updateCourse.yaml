@@ -1,0 +1,53 @@
+Update a course already added by the user
+---
+tags:
+  - User
+security:
+  - Bearer: []
+parameters:
+  - in: path
+    name: courseid
+    required: true
+  - name: body
+    description: The body must contain modules completed and rating for the course
+    in: body
+    required: true
+    schema:
+      type: object
+      required: 
+        - modules_completed
+        - rating
+      properties:
+        modules_completed:
+          type: "integer"
+          example: 10
+        rating:
+          type: "integer"
+          example: 3
+
+responses:
+  200:
+    description: Courses updated successfully
+
+  400:
+    description: Bad Request
+
+  401: 
+    description: Unauthorized Request
+
+  404:
+    description: Course/Enrollment with the specified username/courseid was not found
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            message:
+              type: string
+              description: A message indicating the status of the request
+            status:
+              type: string
+              description: The status of the request
+  
+  500:
+    description: Something went wrong internally

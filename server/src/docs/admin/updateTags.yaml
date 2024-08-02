@@ -1,0 +1,35 @@
+Admin updates the tags in db
+---
+tags: 
+  - Admin
+parameters:
+  - name: body
+    description: The body should have a Youtube playlist/video link
+    in: body
+    required: true
+    schema:
+      type: object
+      required:
+        - "insert_tags"
+        - "delete_tags"
+      properties:
+        insert_tags:
+          type: "array"
+          example: ["programming", "web development"]
+        delete_tags:
+          type: "array"
+          example: ["programming", "web development"]
+security:
+  - Bearer: []
+responses:
+  200:
+    description: Tags updated successfully
+    
+  400:
+    description: Bad Request
+  
+  401:
+    description: Missing authorization header
+  
+  500:
+    description: Something went wrong internally

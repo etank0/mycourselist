@@ -1,0 +1,68 @@
+Logs in the admin
+---
+tags: 
+  - Authentication
+parameters:
+  - name: body
+    description: The body should contain the user login credentials
+    in: body
+    required: true
+    schema:
+      type: object
+      required:
+        - "username"
+        - "password"
+      properties:
+        username:
+          type: "string"
+          example: "user456"
+        password:
+          type: "string"
+          format: password
+          example: "********"
+
+responses:
+  200:
+    description: Admin logged in successfully
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            admin:
+              type: object
+              properties:
+                access_token:
+                  type: string
+                  description: The access token for the admin session
+                email:
+                  type: string
+                  description: The email address of the admin
+                id:
+                  type: integer
+                  description: The ID of the admin
+                name:
+                  type: string
+                  description: The name of the admin
+                refresh_token:
+                  type: string
+                  description: The refresh token for the admin session
+                url:
+                  type: string
+                  format: uri
+                  description: The URL of the admin's profile picture
+                username:
+                  type: string
+                  description: The username of the admin
+            message:
+              type: string
+              description: A message indicating the status of the request
+            status:
+              type: string
+              description: The status of the request
+    
+  400:
+    description: Bad Request
+  
+  500:
+    description: Something went wrong internally

@@ -1,0 +1,13 @@
+Public route to get the tags in db
+---
+tags: 
+  - Tags
+responses:
+  200:
+    description: Tags fetched successfully
+    
+  400:
+    description: Bad Request
+
+  500:
+    description: Something went wrong internally

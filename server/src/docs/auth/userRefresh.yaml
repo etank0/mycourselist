@@ -1,0 +1,38 @@
+Refresh User Access Token
+---
+tags:
+  - Authentication
+security:
+  - Bearer: []
+responses:
+  200:
+    description: User access token refreshed successfully
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            status:
+              type: string
+              description: The status of the request
+            message:
+              type: string
+              description: A message indicating the result of the request
+            access_token:
+              type: string
+              description: The new access token for the user
+  400:
+    description: Unauthorized Request
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            status:
+              type: string
+              description: The status of the request
+            message:
+              type: string
+              description: A message indicating the reason for the failure
+  401:
+    description: Missing authorization header

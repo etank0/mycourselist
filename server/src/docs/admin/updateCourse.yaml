@@ -1,0 +1,45 @@
+Admin updates the courses in db
+---
+tags: 
+  - Admin
+parameters:
+  - in: path
+    name: id
+    required: true
+  - name: body
+    description: The body should have a Youtube playlist/video link
+    in: body
+    required: true
+    schema:
+      type: object
+      required:
+        - "description"
+        - "tags"
+        - "newtags"
+      properties:
+        description:
+          type: "string"
+          example: "Javscript course!"
+        tags:
+          type: "array"
+          items: "string"
+          example: ["programming", "web development"]
+        newtags:
+          type: "array"
+          items: "string"
+          example: ["programming", "web development"]
+
+security:
+  - Bearer: []
+responses:
+  200:
+    description: Course updated successfully
+    
+  400:
+    description: Bad Request
+  
+  401:
+    description: Missing authorization header
+  
+  500:
+    description: Something went wrong internally

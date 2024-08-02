@@ -1,0 +1,18 @@
+Admin gets the courses in db
+---
+tags: 
+  - Admin
+security:
+  - Bearer: []
+responses:
+  200:
+    description: Courses fetched successfully
+    
+  400:
+    description: Bad Request
+  
+  401:
+    description: Missing authorization header
+  
+  500:
+    description: Something went wrong internally
